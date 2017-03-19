@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                loopWithTen(10);
-                Intent i = new Intent(MainActivity.this , MyService.class);
-                i.putExtra("hello" , "world");
+                Intent i = new Intent(MainActivity.this , ThreadService.class);
+//                i.putExtra("helloo" , "world");
                 startService(i);
             }
         });
