@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                loopWithTen(10);
                 Intent i = new Intent(MainActivity.this , MyService.class);
+                i.putExtra("hello" , "world");
                 startService(i);
             }
         });

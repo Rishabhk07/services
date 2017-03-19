@@ -20,6 +20,11 @@
             android:name=".MyService"
             android:enabled="true"
             android:exported="true"></service>
+        <service
+            android:name=".ThreadService"
+            android:enabled="false"
+            android:exported="false" />
+
     </application>
 
 </manifest>
