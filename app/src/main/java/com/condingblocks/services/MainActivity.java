@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String  TAG = "MainActivity";
     Button startBtn;
+    Button uploadBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +25,24 @@ public class MainActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                loopWithTen(10);
-                Intent i = new Intent(MainActivity.this , ThreadService.class);
-//                i.putExtra("helloo" , "world");
-                startService(i);
+////                loopWithTen(10);
+//                Intent i = new Intent(MainActivity.this , ThreadService.class);
+//                i.setAction(ThreadService.ACTION_DOWNLOAD);
+//                i.putExtra("url" , "http://url");
+////                i.putExtra("helloo" , "world");
+//                startService(i);
+
+                ThreadService.setIntent(MainActivity.this , ThreadService.ACTION_DOWNLOAD , "http://");
+
+            }
+        });
+
+        uploadBtn = (Button) findViewById(R.id.button2);
+
+        uploadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ThreadService.setIntent(MainActivity.this , ThreadService.ACTION_UPLOAD , "http://");
             }
         });
 
